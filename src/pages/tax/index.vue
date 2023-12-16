@@ -21,9 +21,7 @@
     <nut-button style="margin-left: auto;
   margin-right: auto;" class="btn" type="success" @click="handleSubmit" block>查询</nut-button>
     <nut-popup position="bottom" v-model:visible="show">
-        <nut-date-picker type="year-month" v-model="currentDate" :min-date="minDate" :max-date="maxDate"
-            @confirm="popupConfirm" :is-show-chinese="true">
-        </nut-date-picker>
+        <nut-picker v-model="currentDate" :columns="year" title="年份选择" @confirm="popupConfirm" @cancel="show = false"></nut-picker>
     </nut-popup>
     <scroll-view scroll-y class="container">
         <view class="page-body">
@@ -44,15 +42,27 @@ import { ref } from 'vue';
 import Taro from '@tarojs/taro'
 import myNavbar from '../../compoment/navbar.vue'
 const show = ref(false);
-const popupDesc = ref();
-const minDate = new Date(2020, 0, 1);
-const maxDate = new Date(2025, 10, 1);
-const currentDate = ref(new Date());
+const popupDesc = ref('');
+const currentDate = ref();
 const transactions = ref('');
 const total = ref(0);
 const taxRate = ref(1);
 const tax = ref(1);
-
+const year = ref([
+{ text: '2023', value: '2023' },
+{ text: '2022', value: '2022' },
+{ text: '2021', value: '2021' },
+{ text: '2020', value: '2020' },
+{ text: '2019', value: '2019' },
+{ text: '2018', value: '2018' },
+  { text: '2017', value: '2017' },
+  
+  
+  
+  
+  
+  
+]);
 const columns = [
     {
         title: '月份',
