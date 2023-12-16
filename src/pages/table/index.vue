@@ -44,12 +44,16 @@ const options = {
     ]
 }
 
-
+const company = ref('');
 onMounted(() => {
+    company.value = Taro.getStorageSync('company');
     const echartComponentInstance = canvas.value; // 组件实例
     Taro.request({
         url: "http://101.200.32.224:3000/financial/transaction/data",
-        method: "GET",
+        method: "POST",
+        data:{
+            company:company.value
+        },
     }).then((res) => {
         options.series[0].data = res.data.list;
         // let firstValue = options.series[0].data.shift();

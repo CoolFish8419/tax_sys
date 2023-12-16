@@ -64,8 +64,9 @@ function Login() {
             method: 'POST',
             url: 'http://101.200.32.224:3000/financial/user/login',
             data: {
-                username: username,
-                password: password,
+                username: username.value,
+                password: password.value,
+                company: company.value
             }
         })
         try {

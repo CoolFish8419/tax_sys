@@ -1,5 +1,5 @@
 <template>
-    <myNavbar :title="'小微企业财务辅助工具'"></myNavbar>
+    <myNavbar :title="'用户管理'"></myNavbar>
     <nut-input v-model="user" placeholder="请输入名字" />
     <nut-input v-model="company" placeholder="请输入公司" />
     <nut-button type="primary" @click="fetchUser" block>查询</nut-button>
@@ -27,7 +27,7 @@
     </nut-popup>
 </template>
 <script setup>
-
+import myNavbar from '../../compoment/navbar.vue'
 import { ref } from 'vue';
 import Taro from '@tarojs/taro'
 const password_change = ref('');
