@@ -90,6 +90,7 @@ async function handleSubmit() {
         url: 'http://101.200.32.224:3000/financial/transaction/sum',
         method: 'POST',
         data: {
+            company: Taro.getStorageSync('company').toString(),
             date: currentDate.value
         }
     }).then(res => {
