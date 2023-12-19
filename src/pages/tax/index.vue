@@ -91,7 +91,7 @@ async function handleSubmit() {
         method: 'POST',
         data: {
             company: Taro.getStorageSync('company').toString(),
-            date: currentDate.value
+            date: currentDate.value.toString()
         }
     }).then(res => {
         let sum = 0;
