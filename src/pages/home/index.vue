@@ -13,7 +13,7 @@
                 </div>
             </nut-cell>
         </div>
-        <nut-cell title="账号性质" :desc="actType" style="width: 300px;margin-left: 37px; flex-basis: none;"></nut-cell>
+        <nut-cell title="账号性质" :desc="actType" style="width: 300px;margin-left: 20px; flex-basis: none;"></nut-cell>
         <div class="func_area">
             <nut-grid :column-num="2" square>
                 <nut-grid-item text="工资管理" @click="goToPage('/pages/wage/index')">
