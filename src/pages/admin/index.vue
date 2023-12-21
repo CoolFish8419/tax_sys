@@ -13,7 +13,7 @@
                 </div>
             </nut-cell>
         </div>
-        <nut-cell title="账号性质" :desc="actType" style="width: 300px;margin-left: 37px; flex-basis: none;"></nut-cell>
+        <nut-cell title="账号性质" :desc="actType" style="width: 300px;margin-left: 20px; flex-basis: none;"></nut-cell>
         <div class="func_area">
             <nut-cell title="待审核事项" is-link @click="goToPage('/pages/admin/examine')"></nut-cell>
         </div>
@@ -24,6 +24,7 @@ import Taro from '@tarojs/taro'
 import { ref, onMounted } from "vue";
 import myNavbar from '../../compoment/navbar.vue'
 const company = ref('');
+const actType = ref('')
 onMounted(() => {
     company.value = Taro.getStorageSync('company');
     if(company.value!=='admin'){

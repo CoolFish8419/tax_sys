@@ -70,7 +70,7 @@ const popupDesc = ref();
 const show_type = ref(false);
 const numberVisible = ref(false);
 const show = ref(false);
-const currentDate = ref(new Date());
+const currentDate = new Date();
 const minDate = new Date(2020, 0, 1);
 const maxDate = new Date(2025, 10, 1);
 const confirm = ({ selectedValue, selectedOptions }) => {
@@ -99,7 +99,7 @@ const submitTransaction = () => {
         data: {
             name: name.value,
             incoming: number.value,
-            date: currentDate.value,
+            date: currentDate,
             type: value.value.toString(),
             company:Taro.getStorageSync('company').toString(),
         }
