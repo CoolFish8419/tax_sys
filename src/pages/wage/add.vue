@@ -96,7 +96,7 @@ const submitTransaction = () => {
         data: {
             name: name.value,
             money: number.value,
-            date: currentDate.value,
+            date: currentDate,
             type: value.value.toString(),
             company:Taro.getStorageSync('company').toString(),
         }
